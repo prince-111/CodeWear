@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Tshirts = () => {
+const tshirt = () => {
   return (
-    <div>tshirts</div>
+    <div>This is tshirt page</div>
   )
 }
 
-export default Tshirts
+export default tshirt

@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
-const Hoodies = () => {
+const Tshirts = () => {
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -13,7 +13,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -35,7 +35,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -56,7 +56,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -77,7 +77,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -98,7 +98,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -119,7 +119,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -140,7 +140,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -161,7 +161,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -182,7 +182,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -203,7 +203,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -224,7 +224,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -245,7 +245,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -266,7 +266,7 @@ const Hoodies = () => {
                   <img
                     alt="ecommerce"
                     className="m-auto md:mx-0 h-[40vh] md:h-[46vh] block"
-                    src="https://m.media-amazon.com/images/I/51wdIgwZefL._SX679_.jpg"
+                    src="https://m.media-amazon.com/images/I/61L61b1uOhL._SY879_.jpg"
                   />
                 </Link>
               </div>
@@ -285,7 +285,7 @@ const Hoodies = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Hoodies
+export default Tshirts;
