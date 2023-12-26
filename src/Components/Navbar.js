@@ -79,7 +79,10 @@ const Navbar = () => {
               </div>
               </li>
           </ol>
-          <button className="flex mx-auto mt-16 text-white bg-pink-400 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-md"><span className='m-1'><IoBagCheck /> </span> CheckOut</button>
+          <div className='flex'>
+          <button className="flex mx-auto mr-2 text-white bg-pink-400 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-md"><span className='m-1'><IoBagCheck /> </span> CheckOut</button>
+          <button className="flex mx-auto mr-2 text-white bg-pink-400 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-md">Clear</button>
+          </div>
           </div>
         </div>
       </div>
