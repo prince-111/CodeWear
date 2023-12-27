@@ -5,6 +5,7 @@ import { IoCloseCircle } from "react-icons/io5";
 import logo from "../../images/codechic logo.png";
 import { FaCartShopping, FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
 import { IoBagCheck } from "react-icons/io5";
+import { MdAccountCircle } from "react-icons/md";
 
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
   // console.log(cart, addToCart, removeFromCart, clearCart, subTotal)
@@ -49,16 +50,22 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
           </ul>
         </div>
         <div>
-          <div
-            onClick={toggleCart}
-            className="cursor-pointer cart absolute right-0 top-4 mx-5"
-          >
-            <FaCartShopping className="text-xl md:text-2xl" />
+          <div className="cursor-pointer cart absolute right-0 top-4 mx-5 flex">
+            <Link href={'/login'}><MdAccountCircle className="text-xl md:text-2xl mx-2" /></Link> 
+            <FaCartShopping
+              onClick={toggleCart}
+              className="text-xl md:text-2xl"
+            />
           </div>
 
           <div
             ref={ref}
-            className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-pink-100 px-8 py-10 transform transition-transform ${Object.keys(cart).length !==0 ?'translate-x-0':'transition-full'}`}>
+            className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-pink-100 px-8 py-10 transform transition-transform ${
+              Object.keys(cart).length !== 0
+                ? "translate-x-0"
+                : "transition-full"
+            }`}
+          >
             <h2 className="font-bold text-xl text-center">Shoping Cart</h2>
             <span
               onClick={toggleCart}
@@ -78,10 +85,33 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                       <div className="w-2/3 font-semibold">{cart[k].name}</div>
                       <div className="flex font-semibold items-center justify-center w-1/3 text-lg">
                         {" "}
-                        <FaCircleMinus onClick={()=>{removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant)}} 
-                        className="cursor-pointer text-pink-500" />{" "}
+                        <FaCircleMinus
+                          onClick={() => {
+                            removeFromCart(
+                              k,
+                              1,
+                              cart[k].price,
+                              cart[k].name,
+                              cart[k].size,
+                              cart[k].variant
+                            );
+                          }}
+                          className="cursor-pointer text-pink-500"
+                        />{" "}
                         <span className="mx-2">{cart[k].qty}</span>{" "}
-                        <FaCirclePlus  onClick={()=>{addToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant)}} className="cursor-pointer text-pink-500" />
+                        <FaCirclePlus
+                          onClick={() => {
+                            addToCart(
+                              k,
+                              1,
+                              cart[k].price,
+                              cart[k].name,
+                              cart[k].size,
+                              cart[k].variant
+                            );
+                          }}
+                          className="cursor-pointer text-pink-500"
+                        />
                       </div>
                     </div>
                   </li>
@@ -92,14 +122,14 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
 
             <div className="flex">
               <Link href={"/checkout"}>
-              <button className="flex mx-auto mr-2 text-white bg-pink-400 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-md">
-                <span className="m-1">
-                  <IoBagCheck />{" "}
-                </span>{" "}
-                CheckOut
-              </button>
+                <button className="flex mx-auto mr-2 text-white bg-pink-400 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-md">
+                  <span className="m-1">
+                    <IoBagCheck />{" "}
+                  </span>{" "}
+                  CheckOut
+                </button>
               </Link>
-              
+
               <button
                 onClick={clearCart}
                 className="flex mx-auto mr-2 text-white bg-pink-400 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-md"
