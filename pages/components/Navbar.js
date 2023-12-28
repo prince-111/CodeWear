@@ -36,23 +36,24 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
         <div className="nav">
           <ul className="flex items-center space-x-6 font-bold md:text-sm">
             <Link href={"/tshirts"}>
-              <li>Tshirt</li>
+              <li className="hover:text-purple-500">Tshirt</li>
             </Link>
             <Link href={"/hoodies"}>
-              <li>Hoodies</li>
+              <li className="hover:text-purple-600">Hoodies</li>
             </Link>
             <Link href={"/sticker"}>
-              <li>Stickers</li>
+              <li className="hover:text-purple-700">Stickers</li>
             </Link>
             <Link href={"/mug"}>
-              <li>Mugs</li>
+              <li className="hover:text-purple-700">Mugs</li>
             </Link>
           </ul>
         </div>
         <div>
           <div className="cursor-pointer cart absolute right-0 top-4 mx-5 flex">
-            <Link href={'/login'}>
-              <MdAccountCircle className="text-xl md:text-2xl mx-2" /></Link> 
+            <Link href={"/login"}>
+              <MdAccountCircle className="text-xl md:text-2xl mx-2" />
+            </Link>
             <FaCartShopping
               onClick={toggleCart}
               className="text-xl md:text-2xl"
@@ -83,7 +84,9 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                 return (
                   <li>
                     <div className="item flex my-5">
-                      <div className="w-2/3 font-semibold">{cart[k].name}({cart[k].size}/{cart[k].variant})</div>
+                      <div className="w-2/3 font-semibold">
+                        {cart[k].name}({cart[k].size}/{cart[k].variant})
+                      </div>
                       <div className="flex font-semibold items-center justify-center w-1/3 text-lg">
                         {" "}
                         <FaCircleMinus

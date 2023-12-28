@@ -21,23 +21,25 @@ const Footer = () => {
         {/* <span className="ml-3 text-xl">Preshop</span> */}
       </div>   
       </Link>
-      <p className="mt-2 text-sm text-gray-500 px-4">Air plant banjo lyft occupy retro adaptogen indego</p>
+      <p className="mt-2 text-sm text-gray-500 px-4">Wear the &lt;code/&gt; </p> 
+      <p className="text-sm text-gray-500 px-4">Premium coding tshirt, hoodies and apparals</p>
+       
     </div>
     <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Shop</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Tshirts</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Hoodies</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Stickers</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            <a className="text-gray-600 hover:text-gray-800">Mugs</a>
           </li>
         </nav>
       </div>
@@ -59,7 +61,7 @@ const Footer = () => {
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Policy</h2>
         <nav className="list-none mb-10">
           <li>
             <a className="text-gray-600 hover:text-gray-800">First Link</a>
@@ -76,7 +78,7 @@ const Footer = () => {
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">ABOUT</h2>
         <nav className="list-none mb-10">
           <li>
             <a className="text-gray-600 hover:text-gray-800">First Link</a>
@@ -96,8 +98,7 @@ const Footer = () => {
   </div>
   <div className="bg-gray-100">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p className="text-gray-500 text-sm text-center sm:text-left">© 2024 Tailblocks —
-        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@knyttneve</a>
+      <p className="text-gray-500 text-sm text-center sm:text-left">© 2024 Preshoping.com — All Rights Reserved
       </p>
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
         <a className="text-gray-500">
