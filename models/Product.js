@@ -1,7 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const ProductSchema = new mongoose.Schema(
-  {
+const ProductSchema = new mongoose.Schema({
     tittle: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
     desc: { type: String, required: true },
@@ -11,8 +10,8 @@ const ProductSchema = new mongoose.Schema(
     color: { type: String },
     price: { type: Number, required: true },
     availableQty: { type: Number, required: true },
-  },
-  { timestamps: true }
-);
+  
+ }, { timestamps: true } );
 
+mongoose.models={}
 export default mongoose.model("Product", ProductSchema);
