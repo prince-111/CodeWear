@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
   const [subTotal, setSubTotal] = useState(0)
 
   useEffect(()=>{
-    console.log("heyy usinf seEffect hook")
+    // console.log("heyy usinf seEffect hook")
     try{
     if(localStorage.getItem("cart")){
       setCart(JSON.parse(localStorage.getItem("cart")))
@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
     }
     setSubTotal(subt)
   }
-  console.log(subTotal);
+  // console.log(subTotal);
 
   const addToCart = (itemCode, qty, price, name, size, variant)=>{
     let newCart = cart;

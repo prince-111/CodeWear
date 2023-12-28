@@ -6,7 +6,7 @@ const connectDb = handler => async (req, res) => {
        return handler(req, res);
      }
  
-     await mongoose.connect("mongodb://localhost:27017/preshoping");
+     await mongoose.connect(process.env.MONGO_URL);
      const result = await handler(req, res);
      mongoose.connection.close(); // Close the connection after handling the request
      return result;

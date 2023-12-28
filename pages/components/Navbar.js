@@ -51,7 +51,8 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
         </div>
         <div>
           <div className="cursor-pointer cart absolute right-0 top-4 mx-5 flex">
-            <Link href={'/login'}><MdAccountCircle className="text-xl md:text-2xl mx-2" /></Link> 
+            <Link href={'/login'}>
+              <MdAccountCircle className="text-xl md:text-2xl mx-2" /></Link> 
             <FaCartShopping
               onClick={toggleCart}
               className="text-xl md:text-2xl"
