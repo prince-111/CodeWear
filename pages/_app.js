@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
     let subt=0;
     let keys = Object.keys(myCart)
     for(let i=0; i<keys.length; i++){
-      console.log(keys)
+      // console.log(keys)
       subt += myCart[keys[i]]["price"] * myCart[keys[i]].qty;
     }
     setSubTotal(subt)
@@ -43,7 +43,7 @@ export default function App({ Component, pageProps }) {
     }
     setCart(newCart)
     saveCart(newCart)
-    console.log(newCart)
+    // console.log(newCart)
   }
 
   const clearCart = ()=>{
@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }) {
       newCart[itemCode].qty = cart[itemCode].qty - qty
     }
 
-    console.log(itemCode)
+    // console.log(itemCode)
     
     if(newCart[itemCode]["qty"]<=0){
       delete newCart[itemCode]
