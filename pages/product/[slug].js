@@ -59,9 +59,9 @@ export default function Post({ buyNow, addToCart, product, variants }) {
   const [color, setColor] = useState(product.color);
   const [size, setSize] = useState(product.size);
 
-  const refreshVariant = () => {
+  const refreshVariant = (newsize, newcolor) => {
     console.log("v is ", variants);
-    let url = `http://localhost:3000/product/${variants[newcolor][newsize]["slug"]}`;
+    const url = `http://localhost:3000/product/${variants[newcolor][newsize]["slug"]}`;
     window.location = url;
   };
 
@@ -137,8 +137,8 @@ export default function Post({ buyNow, addToCart, product, variants }) {
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>
-                  {Object.keys(variants).includes("white") &&
-                    Object.keys(variants["white"]).includes(size) && (
+                  {Object.keys(variants).includes("red") &&
+                    Object.keys(variants["red"]).includes(size) && (
                       <button
                         onClick={() => {
                           refreshVariant(size, "white");
@@ -326,7 +326,7 @@ export async function getServerSideProps(context) {
     await mongoose.connect(process.env.MONGO_URL);
   }
   let product = await Product.findOne({ slug: context.query.slug });
-  let variants = await Product.find({ title: product.title });
+  let variants = await Product.find({ title: product.title, category:product.category });
   let colorSizeSlug = {}; //{red: {xl: {slug:"'wear-the-code-xl"}}}
 
   for (let item of variants) {
