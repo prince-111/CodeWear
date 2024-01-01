@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoCloseCircle } from "react-icons/io5";
@@ -7,8 +7,10 @@ import { FaCartShopping, FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
 import { IoBagCheck } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 
-const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
+const Navbar = ({logout, user, cart, addToCart, removeFromCart, clearCart, subTotal }) => {
   // console.log(cart, addToCart, removeFromCart, clearCart, subTotal)
+
+  const [dropdown, setDropdown] = useState(false)
 
   const ref = useRef();
 
@@ -27,14 +29,14 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
   return (
     <div>
       <div className="flex flex-col md:flex-row  md:justify-start justify-center items-center py-2 shadow-md  sticky top-0 bg-white z-10">
-        <div className="logo mx-5">
+        <div className="logo mr-auto md:mx-5">
           <Link href={"/"}>
             {" "}
             <Image src={logo} width={200} height={40} alt="PreShoping" />{" "}
           </Link>
         </div>
         <div className="nav">
-          <ul className="flex items-center space-x-6 font-bold md:text-sm">
+          <ul className="flex items-center space-x-6 font-bold md:text-md">
             <Link href={"/tshirts"}>
               <li className="hover:text-purple-500">Tshirt</li>
             </Link>
@@ -50,10 +52,22 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
           </ul>
         </div>
         <div>
-          <div className="cursor-pointer cart absolute right-0 top-4 mx-5 flex">
-            <Link href={"/login"}>
-              <MdAccountCircle className="text-xl md:text-2xl mx-2" />
-            </Link>
+          <div className="cursor-pointer items-center cart absolute right-0 top-4 mx-5 flex">
+            <div onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>setDropdown(false)}>
+           {dropdown && <div onMouseOver={()=>{setDropdown}} onMouseLeave={()=>{setDropdown(false)}} 
+            className="absolute right-5 bg-pink-300 top-6 py-2 rounded-md px-5 w-32">
+              <ul>
+                <Link href="/myaccount"><li className="py-1 hover:text-pink-700 text-sm font-bold">My Account</li></Link>
+                <Link href="/orders"><li className="py-1 hover:text-pink-700 text-sm font-bold">Orders</li></Link>
+                <li onClick={logout} className="py-1 hover:text-pink-700 text-sm font-bold">LogOut</li>
+              </ul>
+            </div>}
+           
+            {user.value && <MdAccountCircle className="text-xl md:text-2xl mx-2" />}
+            </div>
+            {!user.value && <Link href={"/login"}>
+              <button className="bg-pink-600 px-2 py-1 rounded-md text-sm text-white mx-2">Login</button>
+            </Link>}
             <FaCartShopping
               onClick={toggleCart}
               className="text-xl md:text-2xl"
