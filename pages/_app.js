@@ -127,6 +127,7 @@ export default function App({ Component, pageProps }) {
     localStorage.removeItem("token");
     setUser({ value: null });
     setKey(Math.random);
+    router.push('/')
   };
 
   return (
