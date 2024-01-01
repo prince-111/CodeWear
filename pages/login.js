@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,6 +10,12 @@ const Login = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  useEffect(()=>{
+    if(localStorage.getItem('token')){
+      router.push('/')
+    }
+  },[])
 
   const handleChange = (e) => {
     if (e.target.name == "name") {
@@ -119,7 +125,7 @@ const Login = () => {
             action="#"
             method="POST"
           >
-            <input type="hidden" name="remember" value="true" />
+            {/* <input type="hidden" name="remember" value="true" /> */}
             <div className="space-y-px rounded-md shadow-sm">
               <div className="mb-4">
                 <label htmlFor="email" className="sr-only">
@@ -157,19 +163,19 @@ const Login = () => {
 
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <input
+                {/* <input
                   onChange={handleChange}
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
                   className="h-4 w-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500"
-                />
-                <label
+                /> */}
+                {/* <label
                   htmlFor="remember-me"
                   className="ml-2 block text-sm text-gray-900"
                 >
                   Remember me
-                </label>
+                </label> */}
               </div>
 
               <div className="text-sm">

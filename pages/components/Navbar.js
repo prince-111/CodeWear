@@ -7,24 +7,34 @@ import { FaCartShopping, FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
 import { IoBagCheck } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 
-const Navbar = ({logout, user, cart, addToCart, removeFromCart, clearCart, subTotal }) => {
+const Navbar = ({
+  logout,
+  user,
+  cart,
+  addToCart,
+  removeFromCart,
+  clearCart,
+  subTotal,
+}) => {
   // console.log(cart, addToCart, removeFromCart, clearCart, subTotal)
 
-  const [dropdown, setDropdown] = useState(false)
+  const [dropdown, setDropdown] = useState(true);
 
-  const ref = useRef();
+  console.log(Object.keys(cart), "Object.keys");
 
   const toggleCart = () => {
-    const cartClassList = ref.current.classList;
+    // const cartClassList = ref.current.classList;
 
-    if (cartClassList.contains("translate-x-full")) {
-      cartClassList.remove("translate-x-full");
-      cartClassList.add("translate-x-0");
-    } else if (!cartClassList.contains("translate-x-full")) {
-      cartClassList.remove("translate-x-0");
-      cartClassList.add("translate-x-full");
+    if (ref.current.classList.contains("translate-x-full")) {
+      ref.current.classList.remove("translate-x-full");
+      ref.current.classList.add("translate-x-0");
+    } else if (!ref.current.classList.contains("translate-x-full")) {
+      ref.current.classList.remove("translate-x-0");
+      ref.current.classList.add("translate-x-full");
     }
   };
+
+  const ref = useRef();
 
   return (
     <div>
@@ -51,36 +61,71 @@ const Navbar = ({logout, user, cart, addToCart, removeFromCart, clearCart, subTo
             </Link>
           </ul>
         </div>
+
         <div>
           <div className="cursor-pointer items-center cart absolute right-0 top-4 mx-5 flex">
-            <div onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>setDropdown(false)}>
-           {dropdown && <div onMouseOver={()=>{setDropdown}} onMouseLeave={()=>{setDropdown(false)}} 
-            className="absolute right-5 bg-pink-300 top-6 py-2 rounded-md px-5 w-32">
-              <ul>
-                <Link href="/myaccount"><li className="py-1 hover:text-pink-700 text-sm font-bold">My Account</li></Link>
-                <Link href="/orders"><li className="py-1 hover:text-pink-700 text-sm font-bold">Orders</li></Link>
-                <li onClick={logout} className="py-1 hover:text-pink-700 text-sm font-bold">LogOut</li>
-              </ul>
-            </div>}
-           
-            {user.value && <MdAccountCircle className="text-xl md:text-2xl mx-2" />}
+            <div
+              onMouseOver={() => {
+                setDropdown(true);
+              }}
+              onMouseLeave={() => setDropdown(false)}
+            >
+              {dropdown && (
+                <div
+                  onMouseOver={() => {
+                    setDropdown;
+                  }}
+                  onMouseLeave={() => {
+                    setDropdown(false);
+                  }}
+                  className="absolute right-5 bg-white shadow-lg border top-6 py-2 rounded-md px-5 w-32"
+                >
+                  <ul>
+                    <Link href="/myaccount">
+                      <li className="py-1 hover:text-pink-700 text-sm font-bold">
+                        My Account
+                      </li>
+                    </Link>
+                    <Link href="/orders">
+                      <li className="py-1 hover:text-pink-700 text-sm font-bold">
+                        Orders
+                      </li>
+                    </Link>
+                    <li
+                      onClick={logout}
+                      className="py-1 hover:text-pink-700 text-sm font-bold"
+                    >
+                      LogOut
+                    </li>
+                  </ul>
+                </div>
+              )}
+
+              {user.value && (
+                <MdAccountCircle className="text-xl md:text-2xl mx-2" />
+              )}
             </div>
-            {!user.value && <Link href={"/login"}>
-              <button className="bg-pink-600 px-2 py-1 rounded-md text-sm text-white mx-2">Login</button>
-            </Link>}
+            {!user.value && (
+              <Link href={"/login"}>
+                <button className="bg-pink-600 px-2 py-1 rounded-md text-sm text-white mx-2">
+                  Login
+                </button>
+              </Link>
+            )}
             <FaCartShopping
               onClick={toggleCart}
               className="text-xl md:text-2xl"
             />
           </div>
 
+          {/* sideCart */}
           <div
             ref={ref}
             className={`w-72 h-[100vh] sideCart overflow-y-scroll absolute top-0 right-0 bg-pink-100 px-8 py-10 transform transition-transform ${
-              Object.keys(cart).length !== 0
-                ? "translate-x-0"
-                : "transition-full"
-            }`}
+              Object.keys(cart).length === 0
+                ? "translate-x-full"
+                : "translate-x-0"
+            } z-10`}
           >
             <h2 className="font-bold text-xl text-center">Shoping Cart</h2>
             <span
@@ -96,7 +141,7 @@ const Navbar = ({logout, user, cart, addToCart, removeFromCart, clearCart, subTo
               )}
               {Object.keys(cart).map((k) => {
                 return (
-                  <li>
+                  <li key={k}>
                     <div className="item flex my-5">
                       <div className="w-2/3 font-semibold">
                         {cart[k].name}({cart[k].size}/{cart[k].variant})
