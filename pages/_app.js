@@ -11,8 +11,7 @@ export default function App({ Component, pageProps }) {
   const [cart, setCart] = useState({});
   const [subTotal, setSubTotal] = useState(0);
   const [user, setUser] = useState({ value: null });
-  const [key, setKey] = useState(0);
-
+  const [key, setKey] = useState();
   const [progress, setProgress] = useState(0)
 
   const router = useRouter();
@@ -138,7 +137,7 @@ export default function App({ Component, pageProps }) {
         waitingTime={400}
         onLoaderFinished={() => setProgress(0)}
       />
-      <Navbar
+     {key && <Navbar
         logout={logout}
         user={user}
         key={key}
@@ -147,7 +146,7 @@ export default function App({ Component, pageProps }) {
         removeFromCart={removeFromCart}
         subTotal={subTotal}
         clearCart={clearCart}
-      />
+      /> } 
       <ToastContainer
         position="top-center"
         autoClose={1500}

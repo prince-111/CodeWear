@@ -64,14 +64,14 @@ const Navbar = ({
 
         <div>
           <div className="cursor-pointer items-center cart absolute right-0 top-4 mx-5 flex">
-            <div
+            <span
               onMouseOver={() => {
                 setDropdown(true);
               }}
               onMouseLeave={() => setDropdown(false)}
             >
               {dropdown && (
-                <div
+                <span
                   onMouseOver={() => {
                     setDropdown;
                   }}
@@ -98,13 +98,13 @@ const Navbar = ({
                       LogOut
                     </li>
                   </ul>
-                </div>
+                </span>
               )}
 
               {user.value && (
                 <MdAccountCircle className="text-xl md:text-2xl mx-2" />
               )}
-            </div>
+            </span>
             {!user.value && (
               <Link href={"/login"}>
                 <button className="bg-pink-600 px-2 py-1 rounded-md text-sm text-white mx-2">

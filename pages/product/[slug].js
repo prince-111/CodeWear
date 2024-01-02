@@ -16,7 +16,7 @@ export default function Post({ buyNow, addToCart, product, variants }) {
 
   const checkServiceability = async () => {
     try {
-      let pins = await fetch("http://localhost:3000/api/pincode");
+      let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
       let pinJson = await pins.json();
 
       // console.log(pinJson, pin);
@@ -60,7 +60,7 @@ export default function Post({ buyNow, addToCart, product, variants }) {
 
   const refreshVariant = (newsize, newcolor) => {
     console.log("v is ", variants);
-    const url = `http://localhost:3000/product/${variants[newcolor][newsize]["slug"]}`;
+    const url = `${process.env.NEXT_PUBLIC_HOST}/product/${variants[newcolor][newsize]["slug"]}`;
     window.location = url;
   };
 
