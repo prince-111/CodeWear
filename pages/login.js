@@ -93,11 +93,12 @@ const Login = () => {
         <div className="w-full max-w-md space-y-8">
           <div>
             <Link href={"/"}>
-              <img
+              <h2 className="text-center">CodeWear</h2>
+              {/* <img
                 className="mx-auto h-10 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt="Logo"
-              />
+              /> */}
               {/* <Image
               className="mx-auto"
               src={Company}

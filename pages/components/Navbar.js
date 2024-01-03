@@ -42,7 +42,8 @@ const Navbar = ({
         <div className="logo mr-auto md:mx-5">
           <Link href={"/"}>
             {" "}
-            <Image src={logo} width={200} height={40} alt="PreShoping" />{" "}
+            {/* <Image src={logo} width={200} height={40} alt="PreShoping" />{" "} */}
+            <h2 className="mt-3 mb-3">CodeWear</h2>
           </Link>
         </div>
         <div className="nav">

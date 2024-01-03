@@ -12,13 +12,13 @@ const Footer = () => {
        
         <Link href="/" passHref>
       <div className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-        <Image
+        {/* <Image
       src={logo}
       width={170}
       height={20}
       alt="Picture of the author"
-    />
-        {/* <span className="ml-3 text-xl">Preshop</span> */}
+    /> */}
+        <span className="ml-3 text-xl">CodeWear</span>
       </div>   
       </Link>
       <p className="mt-2 text-sm text-gray-500 px-4">Wear the &lt;code/&gt; </p> 
