@@ -12,15 +12,16 @@ const Checkout = ({ cart, addToCart, subTotal, removeFromCart }) => {
     // Get a transaction token
     const data = {cart, subTotal, oid, email:"email"};
 
-    let a = fetch(`${NEXT_PUBLIC_HOST}/api/pretransaction`,{
+    let a = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pretransaction`,{
       method:'POST',
       headers:{
         'Content-Type': 'application/json',
       },
-      body:json.stringify(data),
+      body: JSON.stringify(data),
     })
-    let txnToken = await a.json()
-    console.log(txnToken)
+    let txnRes = await a.json()
+    console.log(txnRes)
+    let txnToken = txnRes.txnToken
 
     var config = {
       root: "",
@@ -60,8 +61,7 @@ const Checkout = ({ cart, addToCart, subTotal, removeFromCart }) => {
       </Head>
       <Script
         type="application/javascript"
-        src={`${process.env.PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.PAYTM_MID}.js`}
-        onload="onScriptLoad();"
+        src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PAYTM_MID}.js`}
         crossorigin="anonymous"
       ></Script>
 
