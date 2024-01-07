@@ -124,7 +124,9 @@ const Checkout = ({ cart, addToCart, subTotal, removeFromCart }) => {
             return (
               <li>
                 <div className="item flex my-5">
-                  <div className=" font-semibold">{cart[k].name}({cart[k].size}/{cart[k].variant})</div>
+                  <div className=" font-semibold">
+                    {cart[k].name}({cart[k].size}/{cart[k].variant})
+                  </div>
                   <div className="flex font-semibold items-center justify-center w-1/3 text-lg">
                     {" "}
                     <FaCircleMinus
@@ -161,17 +163,17 @@ const Checkout = ({ cart, addToCart, subTotal, removeFromCart }) => {
           })}
         </ol>
         <span className="font-bold">Subtotal: ₹{subTotal}</span>
-        </div>
-        <div className="mx-4">
-          <Link href={"/checkout"}>
-            <button className="flex mr-2 text-white bg-pink-400 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-md">
-              <span className="m-1">
-                <IoBagCheck />{" "}
-              </span>{" "}
-              Pay ₹{subTotal}
-            </button>
-          </Link>
-        </div>
+      </div>
+      <div className="mx-4">
+        <Link href={"/checkout"}>
+          <button className="flex mr-2 text-white bg-pink-400 border-0 py-2 px-6 focus:outline-none hover:bg-pink-500 rounded text-md">
+            <span className="m-1">
+              <IoBagCheck />{" "}
+            </span>{" "}
+            Pay ₹{subTotal}
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
