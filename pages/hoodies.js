@@ -7,6 +7,7 @@ const Hoodies = ({ products, message }) => {
   // console.log(products);
 
   return (
+    
     <div>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
