@@ -148,7 +148,7 @@ const cart = () => {
                     stroke-width="2"
                     viewBox="0 0 24 24"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     class="!text-lg"
                     height="1em"
                     width="1em"
